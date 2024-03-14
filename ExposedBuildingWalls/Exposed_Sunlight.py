@@ -1,5 +1,6 @@
 import math
 
+# Function to find heighest Point from buildings
 def maxPointOfBuilding(building):
     maxPoint = None
     maxX = float("-inf")
@@ -10,7 +11,7 @@ def maxPointOfBuilding(building):
 
     return maxPoint
 
-
+# Function to Check is Building on left, right side of source
 def checkBuildingIsOnLeft(maxPoint, sourcePoint):
     if maxPoint[0] > sourcePoint[0]:
         return "Right"
@@ -19,7 +20,7 @@ def checkBuildingIsOnLeft(maxPoint, sourcePoint):
     else:
         return "Is on Line"
 
-
+# Function to Check is Height of Building is greater then source point 
 def isAbove(maxPoint, source):
     if maxPoint[1] < source[1]:
         return "Above"
@@ -28,14 +29,14 @@ def isAbove(maxPoint, source):
     else:
         return "OnLine"
 
-
+# Function to get legth of line 
 def getLength(point1, point2):
     x1, y1 = point1
     x2, y2 = point2
     distance = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
     return distance
 
-
+# Function to find intersection between two lines
 def findIntersection(line1, line2):
     x1, y1 = line1[0]
     x2, y2 = line1[1]
@@ -77,7 +78,7 @@ def findIntersection(line1, line2):
             y = m1 * x3 + c1
     return x, y
 
-
+# Function to check point is present on the vertical line or not
 def onVerticalLine(line, point):
     if line[0][1] < line[1][1]:
         if line[0][1] < point[1] and line[1][1] > point[1]:
@@ -88,7 +89,7 @@ def onVerticalLine(line, point):
             return True
         return False
 
-
+# Function to check point is present on the horizontal line or not
 def onHorizontalLine(line, point):
     if line[0][0] < line[1][0]:
         if line[0][0] < point[0] and line[1][0] > point[0]:
@@ -99,7 +100,7 @@ def onHorizontalLine(line, point):
             return True
         return False
 
-
+# Function to calculate the length exposed wall on the right side of source point
 def calculateLengthOfExposedWallOnRightSide(buildingOnRightSide):
     sum = 0
     count = 0
@@ -161,7 +162,7 @@ def calculateLengthOfExposedWallOnRightSide(buildingOnRightSide):
                 sum += length + width
     return sum
 
-
+# Function to calculate the length of exposed wall on the Left side of source point
 def calculateLengthOfExposedWallOnLeftSide(buildingOnLeftSide):
     sum = 0
     count = 0
@@ -223,7 +224,7 @@ def calculateLengthOfExposedWallOnLeftSide(buildingOnLeftSide):
                 sum += length + width
     return sum
 
-
+# Function to calculate the legnth of exposed wall
 def calculateLengthOfExposedWall(Buildings, source):
     buildingOnLeftSide = []
     buildingOnRightSide = []

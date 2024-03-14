@@ -45,6 +45,3 @@ The script requires the `math` module for mathematical calculations.
 
 - [Ramesh Choudhari] - [https://github.com/Umesh-Choudhari]
 
----
-
-You can fill in the placeholders with your information and upload the README.md file to your project repository. Adjustments can be made based on your preferences and additional details you may want to include.
